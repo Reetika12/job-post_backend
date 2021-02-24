@@ -10,11 +10,8 @@ module Api::V1
             if user.password == params[:password]
               return render json: user
             else 
-              return render json: nil, status: :bad_request
+              return render json: {message: 'wrong password'}, status: :bad_request
             end
-            
         end
-        
-
     end
 end
